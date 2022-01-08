@@ -1,0 +1,155 @@
+
+.create-task-title {
+    display: block;
+    margin: auto;
+    margin-top: 50px;
+    
+    width: 75%;
+    height: 75px;
+
+    background-color: var(--dark-pink-button);
+    border: solid var(--darker-pink-button) 1px;
+    border-radius: 50px !important;
+}
+
+.create-task-choosers-container {
+    margin-top: 75px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.create-task-chooser {
+    width: 35%;
+
+    font-size: 4vw;
+    text-align: center;
+    word-break: break-word;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+
+    padding: var(--padding-normal);
+
+    background-color: var(--dark-pink-button);
+    border: dashed var(--darker-pink-button) 1px;
+    border-radius: var(--radius-giant);
+
+    cursor: pointer;
+}
+
+
+.create-task-description-container {
+    width: 100;
+    height: 42.5%;
+}
+.create-task-description {
+    display: block;
+    margin: auto;
+    margin-top: 35px;
+    width: 90%;
+    height: 250px;
+    padding: var(--padding-big);
+    padding-top: 35px;
+}
+.create-task-save-button {
+    margin-top: 35px !important;
+    display: block;
+    margin: auto;
+}
+
+
+#Choose-Time-Popup, #Choose-Period-Popup {
+    top: 175px;
+    z-index: 99999;
+}
+#Choose-Time-Popup .home-popup-container {
+    background-color: var(--dark-pink-button);
+}
+
+.time-input-box {
+    width: 90%;
+    margin: auto;
+    height: 125px;
+
+    border: var(--border-generic);
+    border-radius: var(--radius-giant);
+    background-color: var(--pink-input);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.time-input {
+    font-size: 6vw;
+    border: none;
+    width: 25%;
+    float: right;
+    background-color: var(--pink-input);
+    color: var(--gray-input-border);
+    margin-left: 0px;
+    margin-right: 0px;
+    overflow-x: hidden;
+}
+.time-input-separator {
+    width: 3px;
+    height: 75px;
+    margin-top: 25px;
+    background-color: var(--gray-input-border);
+}
+
+.choose-time-ok-button {
+    height: 100px;
+    font-size: 4vw;
+    background-color: var(--pink-input);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#Choose-Period-Popup .home-popup-container {
+    background-color: var(--dark-pink-button);
+}
+
+.h4-less-margin-top {
+    margin-top: -25px !important;
+}
+.h4-less-margin-bottom {
+    margin-bottom: -25px !important;
+}
+.period-days-box {
+    width: 60%;
+    display: flex;
+    margin: auto;
+}
+.period-days-input {
+    flex: 1;
+}
+.period-days-h4 {
+    flex: 2;
+}
+.period-days-input {
+    width: 100px;
+    
+}
+.period-days-h4 {
+    width: 100px !important;
+}
+.every-x-days-input {
+    display: inline-block;
+    width: 60px;
+}
+
+.input--larger-font {
+    font-size: 6vw;
+}
+
+
+

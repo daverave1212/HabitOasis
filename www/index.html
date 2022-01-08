@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://platform.linkedin.com ">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/LoginPage.css">
+        <link rel="stylesheet" href="css/HomePage.css">
+        <link rel="stylesheet" href="css/CreateTaskPage.css">
+        <link rel="stylesheet" href="css/Task.css">
+        <link rel="stylesheet" href="css/FooterMenu.css">
+        <link rel="stylesheet" href="css/generic-style.css">
+
+        <title>Habit Oasis</title>
+    </head>
+    <body>
+
+        <div class="App" style="display: none;">    <!-- Is shown when the app loads -->
+
+
+
+            <div class="footer-cadre" style="display: none;">&nbsp;</div>
+            <div class="footer-bottom" style="display: none;">
+                <svg class="footer-svg" xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="var(--gray-input-border)" class="bi bi-journal" viewBox="0 0 16 16">
+                    <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
+                    <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+                </svg>
+                <div class="footer-plus-container">
+                    <!-- <button class="footer-plus" onclick="asdasd">+</button> -->
+                </div>
+                <svg class="footer-svg" xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="var(--gray-input-border)" class="bi bi-house" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                    <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+                    </svg>
+            </div>
+            <div class="footer-middle-button" style="display: none;">
+                <button class="footer-plus" onclick="showPage('Create-Task-Page')">+</button>
+            </div>
+
+
+            <div id="Choose-Time-Popup" class="home-popup" style="display: none;">
+                <div class="home-popup-container">
+                    <div class="time-input-box">
+                        <input class="time-input time-input--hour" value="16">
+                        <div class='time-input-separator'>&nbsp;</div>
+                        <input class="time-input time-input--minute" value="35">
+                    </div>
+                    <div class="home-popup-yes-no-container">
+                        <button class="yes-no-button choose-time-ok-button" onclick="onSelectChooseTimePopup()">Select</button>
+                        <button class="yes-no-button choose-time-ok-button" onclick="onCancelChooseTimePopup()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+            <div id="Choose-Period-Popup" class="home-popup" style="display: none;">
+                <div class="home-popup-container">
+                    <h4 class="h4-less-margin-bottom">Choose task period</h4>
+                    <div class="period-days-box h4-less-margin-top h4-less-margin-bottom">
+                        <input class="period-days-input input--larger-font" value="5">
+                        <h4 class="period-days-h4">days</h4>
+                    </div>
+                    <h4 class="period--remind-me-h4 h4-less-margin-top h4-less-margin-bottom">and remind me</h4>
+                    <h4 class="h4-less-margin-top h4-less-margin-bottom">every <input value="3" class="every-x-days-input input--larger-font"> days.</h4>
+                    <div class="home-popup-yes-no-container">
+                        <button class="yes-no-button choose-time-ok-button" onclick="onSelectChoosePeriodPopup()">Select</button>
+                        <button class="yes-no-button choose-time-ok-button" onclick="onCancelChoosePeriodPopup()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="Login-Page" class="page-body togglable-div" style="display: none;" data-has-footer="false">
+                <div class="habit-oasis-logo">
+                    HABIT<br/>OASIS
+                </div>
+                <div id="Login-Form-Box">
+                    <h4>Make your dream lifestyle a reality!</h4>
+                    <div class="login-input-container">
+                        <input class="login-input" placeholder="Username"/>
+                    </div>
+                    <div class="login-input-container">
+                        <input placeholder="Password"/>
+                    </div>
+                </div>
+    
+                <div id="Share-Box">
+                    <button class="grid-center" onclick="login()">Log in</button>
+                    <button class="grid-center">Register</button>
+                    <img class="share-logo grid-center" src="Google.png"/>
+                    <img class="share-logo grid-center" src="Facebook.png"/>
+                </div>
+            </div>
+    
+    
+    
+
+
+
+
+
+            <div id="Create-Task-Page" class="page-body togglable-div" stlye="display: none;" data-has-footer="true" data-footer-cadre-height="350px">
+
+                <div id="Home__Upper-Pinky">&nbsp;</div>
+                <div class="default-header">
+                    <div class="header-button-container">
+                        <button class="header-navigation-button">=</button>
+                    </div>
+                    <div class="header-right-side-container">
+                        <h4>Create new task</h4>
+                    </div>
+                </div>
+
+                <input class="create-task-title" placeholder="Title">
+
+                <div class="create-task-choosers-container">
+                    <div class="create-task-chooser" onclick="showTimePopup('new-task')">Choose reminder time (<span class="reminder-time">16:35</span>)</div>
+                    <div class="create-task-chooser" onclick="showPeriodPopup('new-task')">Choose task period</div>
+                </div>
+
+                <div>
+                    <textarea class="create-task-description" placeholder="Description"></textarea>
+                </div>
+
+                <button class="create-task-save-button" onclick="saveTask()">Save</button>
+            </div>
+    
+    
+
+
+
+
+
+
+
+
+            <div id="Home-Page" class="page-body togglable-div" style="display: none;" data-has-footer="true" data-footer-has-button="true">
+    
+                <div id="Home__Upper-Pinky">&nbsp;</div>
+
+                <div id="Have-You-Worked-Popup" class="home-popup" style="display:none;">
+                    <div class="home-popup-container">
+                        <h4>Have you worked for <span class="home-popup-task-name">Task 1</span> today?</h4>
+                        <div class="home-popup-yes-no-container">
+                            <button class="yes-no-button" onclick="onYesWorkedOnTaskClick()">Yes</button>
+                            <button class="yes-no-button" onclick="onNoWorkedOnTaskClick()">No</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="Would-You-Like-To-Restart-Popup" class="home-popup" style="display:none;">
+                    <div class="home-popup-container">
+                        <h4>Would you like to restart <span class="home-popup-task-name">Task 1</span></h4>
+                        <div class="home-popup-yes-no-container">
+                            <button class="yes-no-button" onclick="onYesRestartTaskClick()">Yes</button>
+                            <button class="yes-no-button" onclick="onNoRestartTaskClick()">No</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="Congratulations-Popup" class="home-popup" style="display:none;">
+                    <div class="home-popup-container">
+                        <h4>Congratulations! You completed the task!</h4>
+                        <div class="home-popup-yes-no-container">
+                            <button class="yes-no-button" onclick="hideCongratulationsPopup()">Awesome!</button>
+                        </div>
+                    </div>
+                </div>
+    
+    
+                <div class="default-header">
+                    <div class="header-button-container">
+                        <button class="header-navigation-button">=</button>
+                    </div>
+                    <div class="header-right-side-container">
+                        <h4>Welcome back <span class="welcome-back-user-name">User</span>!</h4>
+                        <div>
+                            <p class="current-date-week-day"></p>
+                            <p class="current-date-full-date"></p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="active-tasks">
+                    <h4>Your active tasks:</h4>
+                    <div class="tasks-container">
+    
+                    </div>
+                </div>
+    
+    
+            </div>
+
+        </div>
+
+        <script src="cordova.js"></script>
+        <script src="js/utils.js"></script>
+
+        <script src="js/HomePage.js"></script>
+        <script src="js/CreateTaskPage.js"></script>
+        <script src="js/Task.js"></script>
+
+        <script src="js/index.js"></script>
+    </body>
+</html>

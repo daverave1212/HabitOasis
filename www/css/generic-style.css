@@ -1,0 +1,98 @@
+@font-face {
+    font-family: my-nunito;
+    src: url('./nunito.ttf');
+}
+@font-face {
+    font-family: my-nunito-light;
+    src: url('./nunitolight.ttf');
+}
+
+
+:root {
+    --pink-input: rgb(253, 208, 207);
+    --gray-input-border: rgb(112, 112, 112);
+    --dark-pink-button: rgb(252, 175, 173);
+    --darker-pink-button: rgb(214, 138, 135);
+    --wicked-pink: rgb(234, 228, 233);
+
+
+    --border-generic: solid var(--gray-input-border) 1px;
+    --radius-giant: 35px;
+
+    --padding-normal: 12px;
+    --padding-big: 25px;
+}
+
+
+#root, html, .App {
+    height: 100%;
+    text-transform: none;
+    color: var(--gray-input-border);
+    font-family: my-nunito;
+}
+*, *:before, *:after {
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family: my-nunito !important;
+    flex-direction: column;
+    font-size: large;
+}
+
+.page-body {
+    width: 100%;
+    height: 100% !important;
+    margin-top: 0px;
+    overflow: auto; /* prevents stupid margin-top bug */
+}
+
+h4 {
+    font-family: my-nunito-light !important;
+    font-size: 4vw;
+    color: var(--gray-input-border);
+    letter-spacing: 2px;
+    text-transform: none !important;
+    text-align: center;
+}
+
+input, button {
+    display: block;
+    font-size: 4vw;
+    padding: 12px;
+    margin: auto;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    background-color: var(--pink-input);
+    border: var(--border-generic);
+    color: var(--gray-input-border);
+    border-radius: 12px;
+    text-align: center;
+    width: 65%;
+}
+
+button {
+    max-width: 150px;
+    border-radius: 25px;
+}
+button:hover {
+    cursor: pointer;
+    color: black;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    -ms-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}
+textarea {
+    font-size: 4vw;
+    font-family: my-nunito;
+    color: var(--gray-input-border);
+    text-align: center;
+
+    background-color: var(--dark-pink-button);
+    border: dashed var(--darker-pink-button) 1px;
+    border-radius: var(--radius-giant);
+}

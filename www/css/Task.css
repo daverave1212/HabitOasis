@@ -1,0 +1,101 @@
+
+
+
+.task {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+
+    margin: auto;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    padding: 10px;
+
+    font-size: 4vw;
+    text-align: center;
+
+    background-color: var(--pink-input);
+    border: solid var(--gray-input-border) 1px;
+    color: var(--gray-input-border);
+    border-radius: 60px;
+}
+
+.task-name-days-box {
+    width: 100%;
+    display: flex;
+}
+
+
+.task-name {
+    flex: 1;
+    min-width: 50%;
+    max-width: 50%;
+    height: 100% !important;
+    vertical-align: middle;
+    text-align: left;
+    line-height: 75px;
+    padding-left: var(--padding-big);
+    text-transform: none;
+}
+
+.task__days-box {
+    flex: 1;
+    min-width: 50%;
+    max-width: 50%;
+
+    padding-top: 5px;
+    height: 70px;
+}
+
+.task__days-box__days-left {
+    font-size: 75%;
+}
+.task__days-box__plus {
+    background-color: var(--dark-pink-button);
+    font-size: 100%;
+    line-height: 0px;
+    height: 40px;
+    width: 60px;
+    margin: auto;
+}
+
+
+
+.task-misc-box {
+    width: 100%;
+}
+
+.task-misc-box-description {
+    width: 100%;
+    padding: var(--padding-normal);
+    display: flex;
+}
+.task-description {
+    margin-top: 0px;
+    flex: 1;
+    min-width: 50%;
+    max-width: 50%;
+    height: 100px;
+    overflow-y: hidden;
+}
+.task-edit-delete-box {
+    padding: 0px;
+    padding-left: 6px;  /* Aligns properly */
+    flex: 1;
+    min-width: 50%;
+    max-width: 50%;
+    justify-content: space-evenly;
+}
+.task-edit-delete-box button {
+    display: block;
+    margin-top: 0px;
+    font-size: 75%;
+}
+.task-misc-box-time-and-period {
+    width: 100%;
+    display: flex;
+}
+
+.task-misc-box-time-and-period button {
+    flex: 1;
+}
